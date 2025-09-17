@@ -53,11 +53,17 @@ public class Main {
         System.out.println(listaBook);
 
         //ESERCIZIO2
-        List<Order> ordiniSoloBaby = tuttiOrdini.stream()
+        try{ List<Order> ordiniSoloBaby = tuttiOrdini.stream()
                 .filter(ordine -> ordine.getProducts().stream()
                         .anyMatch(prodotto -> prodotto.getCategory() == Category.BABY))
                 .toList();
-        ordiniSoloBaby.forEach(System.out::println);
+            ordiniSoloBaby.forEach(System.out::println);
+        } catch (Exception e) {
+            System.out.println("Non ci sono prodotti di categoria BABY");
+        }
 
     }
+
+        //ESERCIZIO3
+
 }
