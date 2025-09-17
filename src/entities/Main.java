@@ -49,7 +49,7 @@ public class Main {
         Collections.addAll(tuttiOrdini, ordine1, ordine2, ordine3);
 
         //ESERCIZIO1
-        List<Product> listaBook = tuttiIProdotti.stream().filter(prodotto -> prodotto.getCategory() == Category.BOOK).toList();
+        List<Product> listaBook = tuttiIProdotti.stream().filter(prodotto -> prodotto.getCategory().equals(Category.BOOK) && prodotto.getPrice() >12).toList();
         System.out.println(listaBook);
 
         //ESERCIZIO2
