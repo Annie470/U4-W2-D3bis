@@ -59,11 +59,15 @@ public class Main {
                 .toList();
             ordiniSoloBaby.forEach(System.out::println);
         } catch (Exception e) {
-            System.out.println("Non ci sono prodotti di categoria BABY");
+            System.out.println("Errore da scrivere");
         }
-
+        //ESERCIZIO3
+        List<Product> prodottiBoys = tuttiIProdotti.stream().filter(product -> product.getCategory().equals(Category.BOYS)).map(product -> {double discount = (product.getPrice()*10)/100;
+        product.setPrice(product.getPrice() - discount);
+        return product;}).toList();
+        System.out.println(prodottiBoys);
     }
 
-        //ESERCIZIO3
+
 
 }
